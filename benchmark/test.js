@@ -3,7 +3,7 @@
 
 'use strict';
 
-var {FastPriorityQueue} = require('../dist/FastPriorityQueue');
+var {TypedPriorityQueue} = require('../dist/TypedPriorityQueue');
 var PriorityQueue = require('js-priority-queue');
 var Heap = require('heap');
 var Stable = require('stablepriorityqueue');
@@ -29,7 +29,7 @@ var defaultcomparator = function(a, b) {
 };
 
 function basictest() {
-  var b1 = new FastPriorityQueue(defaultcomparator);
+  var b1 = new TypedPriorityQueue(defaultcomparator);
   var b2 = new Heap(function(a, b) {
     return a - b;
   });
@@ -60,7 +60,7 @@ function QueueEnqueueBench(blocks) {
     b.pop();
   }
      {
-      var b = new FastPriorityQueue(defaultcomparator);
+      var b = new TypedPriorityQueue(defaultcomparator);
       for (var i = 0 ; i < 128  ; i++) {
         b.add(rand(i));
       }
@@ -70,8 +70,8 @@ function QueueEnqueueBench(blocks) {
     }
    
   var ms = suite
-    .add('FastPriorityQueue', function() {
-      var b = new FastPriorityQueue(defaultcomparator);
+    .add('TypedPriorityQueue', function() {
+      var b = new TypedPriorityQueue(defaultcomparator);
       for (var i = 0 ; i < 128  ; i++) {
         b.add(rand(i));
       }
@@ -81,8 +81,8 @@ function QueueEnqueueBench(blocks) {
       }
       return b;
     })
-    .add('FastPriorityQueue---replaceTop', function() {
-      var b = new FastPriorityQueue(defaultcomparator);
+    .add('TypedPriorityQueue---replaceTop', function() {
+      var b = new TypedPriorityQueue(defaultcomparator);
       for (var i = 0 ; i < 128  ; i++) {
         b.add(rand(i));
       }

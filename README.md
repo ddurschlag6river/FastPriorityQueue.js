@@ -89,33 +89,51 @@ JavaScript implementation we could find.
 
 ```
 $ node test.js
-Platform: linux 4.4.0-38-generic x64
-Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
-Node version 4.5.0, v8 version 4.5.103.37
+Platform: darwin 17.4.0 x64
+Intel(R) Core(TM) i7-4770HQ CPU @ 2.20GHz
+Node version 8.5.0, v8 version 6.0.287.53
 
 Comparing against:
 js-priority-queue: https://github.com/adamhooper/js-priority-queue 0.1.5
+stablepriorityqueue: https://github.com/lemire/StablePriorityQueue.js 0.1.0
 heap.js: https://github.com/qiao/heap.js 0.2.6
 binaryheapx: https://github.com/xudafeng/BinaryHeap 0.1.1
 priority_queue: https://github.com/agnat/js_priority_queue 0.1.3
 js-heap: https://github.com/thauburger/js-heap 0.3.1
 queue-priority: https://github.com/augustohp/Priority-Queue-NodeJS 1.0.0
 priorityqueuejs: https://github.com/janogonzalez/priorityqueuejs 1.0.0
-qheap: https://github.com/andrasq/node-qheap 1.3.0
+qheap: https://github.com/andrasq/node-qheap 1.4.0
 yabh: https://github.com/jmdobry/yabh 1.2.0
 
 starting dynamic queue/enqueue benchmark
-TypedPriorityQueue x 36,813 ops/sec ±0.15% (98 runs sampled)
-js-priority-queue x 5,374 ops/sec ±0.29% (97 runs sampled)
-heap.js x 7,525 ops/sec ±0.21% (94 runs sampled)
-binaryheapx x 4,741 ops/sec ±0.19% (98 runs sampled)
-priority_queue x 3,657 ops/sec ±2.37% (92 runs sampled)
-js-heap x 271 ops/sec ±0.35% (90 runs sampled)
-queue-priority x 455 ops/sec ±0.44% (90 runs sampled)
-priorityqueuejs x 7,012 ops/sec ±0.14% (75 runs sampled)
-qheap x 36,289 ops/sec ±0.33% (97 runs sampled)
-yabh x 3,975 ops/sec ±3.57% (76 runs sampled)
-Fastest is TypedPriorityQueue
+TypedPriorityQueue x 27,029 ops/sec ±1.47% (83 runs sampled)
+TypedPriorityQueue---replaceTop x 81,952 ops/sec ±2.18% (84 runs sampled)
+sort x 6,835 ops/sec ±1.62% (85 runs sampled)
+StablePriorityQueue x 2,414 ops/sec ±0.98% (85 runs sampled)
+js-priority-queue x 4,096 ops/sec ±0.95% (88 runs sampled)
+heap.js x 5,757 ops/sec ±0.80% (89 runs sampled)
+binaryheapx x 3,186 ops/sec ±1.13% (85 runs sampled)
+priority_queue x 2,555 ops/sec ±2.64% (82 runs sampled)
+js-heap x 431 ops/sec ±1.24% (84 runs sampled)
+queue-priority x 293 ops/sec ±4.03% (74 runs sampled)
+priorityqueuejs x 6,191 ops/sec ±1.46% (86 runs sampled)
+qheap x 23,370 ops/sec ±1.00% (86 runs sampled)
+yabh x 3,653 ops/sec ±0.96% (88 runs sampled)
+
+starting dynamic queue/enqueue benchmark
+TypedPriorityQueue x 2,394 ops/sec ±1.59% (85 runs sampled)
+TypedPriorityQueue---replaceTop x 9,449 ops/sec ±1.21% (86 runs sampled)
+sort x 616 ops/sec ±0.93% (84 runs sampled)
+StablePriorityQueue x 217 ops/sec ±1.84% (77 runs sampled)
+js-priority-queue x 410 ops/sec ±1.04% (85 runs sampled)
+heap.js x 461 ops/sec ±1.39% (81 runs sampled)
+binaryheapx x 323 ops/sec ±1.25% (84 runs sampled)
+priority_queue x 279 ops/sec ±1.16% (84 runs sampled)
+js-heap x 41.28 ops/sec ±1.50% (53 runs sampled)
+queue-priority x 31.40 ops/sec ±1.20% (55 runs sampled)
+priorityqueuejs x 536 ops/sec ±1.13% (83 runs sampled)
+qheap x 2,130 ops/sec ±1.15% (86 runs sampled)
+yabh x 356 ops/sec ±1.63% (80 runs sampled)
 ```
 
 Note that ``qheap`` has been updated following the introduction of ``TypedPriorityQueue``, with a reference to ``TypedPriorityQueue`` which might explains the fact that its performance is comparable to ``TypedPriorityQueue``.
